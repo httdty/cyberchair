@@ -30,7 +30,7 @@ Vue.use(vuetify)
 var axios = require('axios')
 // Axios挂载到prototype，全局可以使用this.$axios访问
 Vue.prototype.$axios = axios
-axios.defaults.baseURL = ''
+axios.defaults.baseURL = 'http://127.0.0.1:8080/'
 // axios.defaults.withCredentials = true
 axios.defaults.headers.post['Content-Type'] = "application/json;charset=UTF-8"
 

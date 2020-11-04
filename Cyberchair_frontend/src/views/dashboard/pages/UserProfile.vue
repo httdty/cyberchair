@@ -72,7 +72,7 @@
                   />
                 </v-col>
 
-   
+
 
                 <v-col
                   cols="12"
@@ -116,7 +116,7 @@
         </base-material-card>
       </v-col>
 
-      
+
     </v-row>
   </v-container>
 </template>
@@ -143,7 +143,7 @@
     methods: {
       loadProfileData(){
         var username = localStorage.getItem('username');
-        var requestUrl = "api/user/userinfo";
+        var requestUrl = "user/userinfo";
         var that = this;
 
         this.$axios.get(

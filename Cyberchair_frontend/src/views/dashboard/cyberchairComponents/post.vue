@@ -76,7 +76,7 @@ export default {
 
   methods: {
     loadPostList() {
-      let requestUrl = "api/meeting/postList"
+      let requestUrl = "meeting/postList"
       this.$axios.get(
         requestUrl,
         {

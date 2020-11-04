@@ -87,7 +87,7 @@ export default {
     },
     methods: {
         beginSubmission(){
-            let requestUrl = 'api/meeting/beginSubmission'
+            let requestUrl = 'meeting/beginSubmission'
             let meetingName = this.$route.query.meetingName
             this.$axios.post(
             requestUrl, {
@@ -121,7 +121,7 @@ export default {
             this.dialog = true
         },
         review(strategy){
-            let requestUrl = 'api/meeting/beginReview'
+            let requestUrl = 'meeting/beginReview'
             let meetingName = this.$route.query.meetingName
             this.$axios.post(
             requestUrl, {
@@ -144,7 +144,7 @@ export default {
             })
         },
         beginDiscussion(){
-            let requestUrl = 'api/meeting/publish'
+            let requestUrl = 'meeting/publish'
             let meetingName = this.$route.query.meetingName
             this.$axios.post(
             requestUrl, {
@@ -166,7 +166,7 @@ export default {
             })
         },
         publishFinalResult(){
-            let requestUrl = 'api/meeting/finalPublish'
+            let requestUrl = 'meeting/finalPublish'
             let meetingName = this.$route.query.meetingName
             this.$axios.post(
             requestUrl, {
@@ -189,7 +189,7 @@ export default {
         },
     },
     mounted: function(){
-        let requestUrl = 'api/meeting/meetingInfo'
+        let requestUrl = 'meeting/meetingInfo'
         let meetingName = this.$route.query.meetingName
         let that = this
         this.$axios.get(

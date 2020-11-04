@@ -35,7 +35,7 @@
         </v-col>
 
 
-      
+
 
 
         <v-col cols="6">
@@ -103,7 +103,7 @@ export default {
         loadDetailEssay: function(){
             this.essayId = this.articleId;
             var that = this
-            var requestUrl = "api/user/articleDetail"
+            var requestUrl = "user/articleDetail"
             this.$axios.get(
                 requestUrl,
                 {params: {
@@ -117,7 +117,7 @@ export default {
                     console.log(ref)
                     that.essayDetail.essayTitle = ref.title;
                     that.essayDetail.essayAbstract = ref.articleAbstract;
-                    that.essayDetail.essayPDFUrl = "api/utils/pdf?pdfUrl="+ref.filePath;
+                    that.essayDetail.essayPDFUrl = "utils/pdf?pdfUrl="+ref.filePath;
                     that.loadComplete = true;
 
                     // that.essayDetail.essayPDFUrl.replace("\\","/")

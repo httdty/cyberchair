@@ -84,7 +84,7 @@ export default {
           let meetingName = this.$route.query.meetingName;
           this.meetingName = meetingName;
           this.authorName = this.$route.query.authorName;
-          let url = "api/meeting/meetingInfo";
+          let url = "meeting/meetingInfo";
           let that = this;
           this.$axios.get(
             url,
@@ -154,7 +154,7 @@ export default {
 
             let that = this;
             let meetingStatus = this.meetingStatus;
-            let URL_getSubmissions = "api/meeting/submissionList";
+            let URL_getSubmissions = "meeting/submissionList";
             let param = this.functionParam[meetingStatus];
             let resultPublishedFlag = false;
             if(this.meetingStatus == "SubmissionAvailable"){

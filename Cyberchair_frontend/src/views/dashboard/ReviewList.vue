@@ -68,7 +68,7 @@
     methods: {
       loadMeetingStatus:function() {
         let meetingName =  this.meetingName = this.$route.query.meetingName;
-        let requestUrl = "api/meeting/meetingInfo";
+        let requestUrl = "meeting/meetingInfo";
 
         let that = this;
         this.$axios.get(
@@ -105,7 +105,7 @@
       loadArticles(){
         let pcMemberName = this.$route.query.pcMemberName;
         let meetingName =  this.$route.query.meetingName;
-        let requestUrl = "api/meeting/reviewArticles";
+        let requestUrl = "meeting/reviewArticles";
 
         let that = this;
           this.$axios.get(

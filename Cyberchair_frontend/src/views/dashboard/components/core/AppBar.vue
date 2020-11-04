@@ -195,7 +195,7 @@
     },
     mounted: function(){
         var that = this;
-        this.$axios.get('api/user/undealedNotificationsNum',
+        this.$axios.get('user/undealedNotificationsNum',
             {params:{username: localStorage.username}}
         ).then(resp => {
             if(resp.data.responseCode == 200 && resp.data.responseMessage == "success"){

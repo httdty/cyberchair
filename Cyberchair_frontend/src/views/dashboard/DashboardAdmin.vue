@@ -65,8 +65,8 @@
         loadMeetings(){
           let username = localStorage.username;
           let requestUrl = {
-            queueingApplication:"api/admin/queueingApplication",
-            alreadyApplication:"api/admin/alreadyApplication",
+            queueingApplication:"admin/queueingApplication",
+            alreadyApplication:"admin/alreadyApplication",
           };
           let that = this;
           for(let type in that.meetingType) {
@@ -113,7 +113,7 @@
 
         },
       // loadMeetings(){
-      //   var requestUrl = "/api/admin/queueingApplication";
+      //   var requestUrl = "/admin/queueingApplication";
       //   var that = this;
       //   this.$axios.get(requestUrl)
       //     .then(resp => {
@@ -168,7 +168,7 @@
         this.functions["alreadyApplication"]["approved"] = function (item) {
         };
         this.functions["queueingApplication"]["approve"] = function (item) {
-          that.$axios.post('api/admin/ratify',
+          that.$axios.post('admin/ratify',
             {
               meetingName:item.meetingName,
               approvalStatus: "ApplyPassed"
@@ -195,7 +195,7 @@
             })
         };
         this.functions["queueingApplication"]["reject"] = function (item) {
-          that.$axios.post('/api/admin/ratify',
+          that.$axios.post('/admin/ratify',
             {
               meetingName:item.meetingName,
               approvalStatus: "ApplyFailed"
@@ -226,7 +226,7 @@
         // this.functionsProcessed["approved"] = function (item) {
         // };
         // this.functionsUnprocessed["approve"] = function (item) {
-        //   that.$axios.post('/api/meeting/admin/ratify',
+        //   that.$axios.post('/meeting/admin/ratify',
         //     {
         //       meetingid:item.id,
         //       status: "approved"
@@ -253,7 +253,7 @@
         //   })
         // };
         // this.functionsUnprocessed["reject"] = function (item) {
-        //   that.$axios.post('/api/meeting/admin/ratify',
+        //   that.$axios.post('/meeting/admin/ratify',
         //     {
         //       meetingid:item.id,
         //       status: "rejected"

@@ -110,10 +110,10 @@ import displayList from "./cyberchairComponents/displayList"
       loadRelatedMeetings(){
         let username = localStorage.username;
         let requestUrl = {
-          chairMeeting:"api/user/chairMeeting",
-          pcMemberMeeting: "api/user/pcMemberMeeting",
-          authorMeeting:"api/user/authorMeeting",
-          availableMeeting:"api/user/availableMeeting"
+          chairMeeting:"user/chairMeeting",
+          pcMemberMeeting: "user/pcMemberMeeting",
+          authorMeeting:"user/authorMeeting",
+          availableMeeting:"user/availableMeeting"
         };
         let that = this;
         for(let type in that.meetingType) {
@@ -155,7 +155,7 @@ import displayList from "./cyberchairComponents/displayList"
         // }
       },
       // loadAllMeetings(){
-      //   var requestUrl = "/api/user/meetinglist";
+      //   var requestUrl = "/user/meetinglist";
       //   var that = this;
       //   this.$axios.get(requestUrl)
       //     .then(resp => {
@@ -246,7 +246,7 @@ import displayList from "./cyberchairComponents/displayList"
         // };
         // this.chairFunctions["beginSubmission"] = function (item) {
         //   //console.log(item.id)
-        //   that.$axios.post('/api/meeting/submission',
+        //   that.$axios.post('/meeting/submission',
         //     {"meetingid":String(item["id"])}
         //   ).then(resp => {
         //     if(resp.data.responseCode == 200 && resp.data.responseMessage == "success"){

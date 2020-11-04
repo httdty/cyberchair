@@ -292,7 +292,7 @@
         let pcMemberName = this.pcMemberName;
         let articleId = this.articleId;
         let status = this.rebuttalStatus;
-        let requestUrl = "api/meeting/reviewConfirm";
+        let requestUrl = "meeting/reviewConfirm";
         this.$axios.post(
           requestUrl,
           {
@@ -332,7 +332,7 @@
         let score = this.markSet[this.markRating['rating']]['mark'];
         let confidence = this.confidenceSet[this.confidenceRating['rating']];
         let status = this.rebuttalStatus;
-        let requestUrl = "api/meeting/reviewer";
+        let requestUrl = "meeting/reviewer";
         let getJson =           {
           articleid: articleId,
           pcMemberName:pcMemberName,
@@ -343,7 +343,7 @@
 
         if(this.reviewStatus != "unReviewed")
         {
-          requestUrl = "api/meeting/updateReview"
+          requestUrl = "meeting/updateReview"
           getJson =           {
             articleId: articleId,
             pcMemberName:pcMemberName,
@@ -440,7 +440,7 @@
       loadRebuttal:function() {
         this.articleId = this.$route.query.articleId;
         let that = this;
-        let requestUrl = "api/meeting/rebuttalInfo";
+        let requestUrl = "meeting/rebuttalInfo";
         this.$axios.get(
           requestUrl,
           {params: {
@@ -468,7 +468,7 @@
         let articleId = this.$route.query.articleId;
         let pcMemberName = this.$route.query.pcMemberName;
         let that = this;
-        let requestUrl = "api/meeting/alreadyReviewedInfo";
+        let requestUrl = "meeting/alreadyReviewedInfo";
         this.$axios.get(
           requestUrl,
           {params: {

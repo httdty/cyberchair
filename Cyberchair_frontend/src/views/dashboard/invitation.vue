@@ -39,7 +39,7 @@
                       </v-col>
                       <v-col cols="3" class="px-0">
                         <template v-if="$vuetify.breakpoint.mdAndUp">
-                          
+
                           <v-select
                             v-model="sortBy"
                             flat
@@ -53,7 +53,7 @@
                           <v-btn-toggle v-model="sortDesc" mandatory></v-btn-toggle>
                         </template>
                       </v-col>
-                  
+
                     </v-row>
                   </template>
 
@@ -100,7 +100,7 @@
 
                   <template v-slot:footer>
                     <v-row class="mt-2" align="center" justify="center">
-                      
+
 
                       <v-spacer></v-spacer>
 
@@ -240,7 +240,7 @@
             pcmInviteReq(){
                 // console.log(this.$route.query.meetingid);
                 // console.log(this.invuser["id"])
-                this.$axios.post('api/meeting/pcmInvitation',
+                this.$axios.post('meeting/pcmInvitation',
                     {
                         meetingName: this.$route.query.meetingName,
                         pcMemberName: this.invuser["username"],
@@ -268,9 +268,9 @@
         mounted: function(){
             var that = this;
             var meetingName = this.$route.query.meetingName;
-            this.$axios.get('api/meeting/invitationStatus',
+            this.$axios.get('meeting/invitationStatus',
                 {params:{meetingName: meetingName}}
-            ).then(resp => {            
+            ).then(resp => {
                 if(resp.data.responseCode == 200 && resp.data.responseMessage == "success"){
                     var users = resp.data.responseBody.invitationStatus;
                     for(var i=0;i<users.length;i++){
@@ -290,9 +290,9 @@
                 this.$toast(this.tips_text,{color:'red'})
             });
             // console.log(that.app_ids)
-            this.$axios.get('api/util/users',
+            this.$axios.get('util/users',
                 {params:{fullname:''}}
-            ).then(resp => {            
+            ).then(resp => {
                 if(resp.data.responseCode == 200 && resp.data.responseMessage == "success"){
                     var users = resp.data.responseBody.users;
                     for(var i=0;i<users.length;i++){

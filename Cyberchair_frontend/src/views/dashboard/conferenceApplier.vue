@@ -86,7 +86,7 @@ export default {
         return false;
       }
       this.uploadDisable = true;
-      this.$axios.post('/api/meeting/application', {
+      this.$axios.post('/meeting/application', {
         chairName: localStorage.username,
         meetingName: this.meetingApplierForm.meetingName,
         acronym: this.meetingApplierForm.acronym,

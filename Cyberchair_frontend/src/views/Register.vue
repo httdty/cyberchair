@@ -20,7 +20,7 @@
                   prepend-icon="lock"
                   ></v-text-field>
 
-        <v-text-field :type="'password'" 
+        <v-text-field :type="'password'"
                   label="confirm-password"
                   :rules="[rules.confirmPassword]"
                   :validate-on-blur="true"
@@ -71,7 +71,7 @@
 export default {
   name: 'Register',
   data () {
-    
+
     return {
       registerForm: {
         username: '',
@@ -90,7 +90,7 @@ export default {
         usernameValidate: function (username) {
           //username pattern: 6-20 characters consisting of letters or numbers
           var usernamePattern = /^[A-Za-z\-][A-Za-z\d_\-]{4,31}$/;
-          if(usernamePattern.test(username)){ 
+          if(usernamePattern.test(username)){
             return true;
           }
           else if(/^[\d]/.test(username)){
@@ -98,13 +98,13 @@ export default {
           }else{
             return "5-32 characters consisting of letters/numbers/special characters(-_)";
           }
-         
-          
+
+
         },
         passwordValidate: function (password) {
           //password pattern:8-20 at least one Captial. normal letter and a number
           var passwordPattern = /^[a-zA-Z_\d\-]{6,32}$/
-    
+
             var appearance = 0;
             if(/.*[a-zA-Z].*/.test(password)) appearance++;
             if(/.*\d.*/.test(password)) appearance++;
@@ -139,7 +139,7 @@ export default {
   methods: {
     register (formName) {
           if(!this.$refs.registerForm.validate())return false
-          this.$axios.post('api/register', {
+          this.$axios.post('register', {
               username: this.registerForm.username,
               password: this.registerForm.password,
               fullname: this.registerForm.fullname,
@@ -181,11 +181,11 @@ export default {
   #container {
     background-image: url("../assets/bg2.png") ;
     background-size: cover;
-    
+
     background-position: center;
   }
 
-  
+
   .register_container{
     border-radius: 15px;
     background-clip: padding-box;
@@ -211,7 +211,7 @@ export default {
     font-size: 5px;
     color: rgb(117, 117, 117);
   }
-  
+
   a{
     text-decoration: none;
   }

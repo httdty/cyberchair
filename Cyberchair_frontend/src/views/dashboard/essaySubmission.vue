@@ -221,7 +221,7 @@
       },
 
       submitEssay: function(essayForm) {
-        // 
+        //
         if(!this.$refs.essayApplicationForm.validate()) return false;
         this.uploadingDisable = true;
         var formData = new FormData();
@@ -236,10 +236,10 @@
 
         formData.append('essayPDF', document.querySelector('input[type=file]').files[0])
         // console.log(formData)
-        let requestUrl = "api/user/articleSubmission"
+        let requestUrl = "user/articleSubmission"
         if(this.updateArticle){
           formData.append("articleId", this.updateArticleId)
-          requestUrl = "api/user/updateArticle"
+          requestUrl = "user/updateArticle"
         }
 
 
@@ -278,7 +278,7 @@
 
       loadMeetingTopics: function(meetingName) {
         this.$axios.get(
-          'api/meeting/meetingInfo',
+          'meeting/meetingInfo',
           {params:{meetingName: meetingName}}
         )
         .then(resp => {
@@ -312,7 +312,7 @@
         let filePDF = document.querySelector('input[type=file]').files[0];
         let reader = new FileReader();
         reader.readAsDataURL(filePDF);
-        
+
         reader.onload = () =>{
           // console.log(reader.result)
           this.pdfData = atob(reader.result.substring(reader.result.indexOf(',') + 1))
@@ -375,7 +375,7 @@
 
       loadUploadedArticleDetail() {
 
-        var requestUrl = "api/user/articleDetail"
+        var requestUrl = "user/articleDetail"
         this.$axios.get(
             requestUrl,
             {params: {articleId: this.updateArticleId}}
@@ -396,7 +396,7 @@
                 this.AuthorList = ref.authors
                 console.log(this.AuthorList)
 
-                this.essayApplierForm.essayPDFUrl = "api/utils/pdf?pdfUrl="+ref.filePath;
+                this.essayApplierForm.essayPDFUrl = "utils/pdf?pdfUrl="+ref.filePath;
 
                 this.articleDeatilLoadCompleted = true;
                 this.articleTopicloadCompleted = true
