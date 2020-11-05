@@ -34,13 +34,7 @@ public class ResponseGenerator {
      *
      */
 
-    public static<T>
-    HashMap<String, Object>
-        generate(
-                T targetObj,
-                String[] keys,
-                Pair[] keyMapping
-        ){
+    public static<T> HashMap<String, Object> generate(T targetObj,String[] keys, Pair[] keyMapping){
 
         Class objClass = targetObj.getClass();
 
@@ -83,12 +77,11 @@ public class ResponseGenerator {
         return new ResponseWrapper<>(200, ResponseGenerator.success, body);
     }
 
-    public static  <T>
+    public static <T>
     Set<HashMap<String, Object>> listTransForm(List<T> list, String[] keys, Pair[] keyMapping){
         Set<HashMap<String, Object>> responseSet = new HashSet<>();
         for (T x: list) {
-            HashMap<String, Object> response = ResponseGenerator.generate(x,
-                    keys, keyMapping);
+            HashMap<String, Object> response = ResponseGenerator.generate(x, keys, keyMapping);
             responseSet.add(response);
         }
         return responseSet;
